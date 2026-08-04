@@ -1,0 +1,49 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/database"
+    },
+    {
+      "path": "./packages/ui"
+    },
+    {
+      "path": "./packages/auth"
+    },
+    {
+      "path": "./packages/ai"
+    },
+    {
+      "path": "./packages/rules"
+    },
+    {
+      "path": "./packages/knowledge"
+    },
+    {
+      "path": "./packages/documents"
+    },
+    {
+      "path": "./packages/notifications"
+    },
+    {
+      "path": "./packages/payments"
+    },
+    {
+      "path": "./packages/localization"
+    },
+    {
+      "path": "./apps/api"
+    },
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./apps/worker"
+    },
+    {
+      "path": "./apps/admin"
+    }
+  ]
+}
