@@ -582,3 +582,21 @@ export const consentRecords = pgTable('consent_records', {
   grantedAt: timestamp('granted_at').notNull().defaultNow(),
   revokedAt: timestamp('revoked_at'),
 });
+
+/**
+ * Auth tokens — email magic links (one-time, hashed, expiring) and
+ * session JWTs are verified against this ledger.
+ */
+export const authTokens = pgTable('auth_tokens', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  tokenHash: text('token_hash').notNull(),
+  type: text('type', { enum: ['magic_link', 'session'] })
+    .notNull()
+    .default('magic_link'),
+  expiresAt: timestamp('expires_at').notNull(),
+  usedAt: timestamp('used_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});

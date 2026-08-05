@@ -16,6 +16,7 @@ export default function HomePage() {
           <Link href="/ausbildung" className="hover:text-gold-300">Ausbildung</Link>
           <Link href="/living" className="hover:text-gold-300">Living in Germany</Link>
           <Link href="/services" className="hover:text-gold-300">Services</Link>
+          <Link href="/login" className="hover:text-gold-300">Sign in</Link>
         </nav>
         <a
           href="/assessment"

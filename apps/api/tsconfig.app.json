@@ -13,10 +13,16 @@
   "exclude": [],
   "references": [
     {
+      "path": "../../packages/mail/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/rules/tsconfig.lib.json"
     },
     {
       "path": "../../packages/database/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/auth/tsconfig.lib.json"
     }
   ]
 }
