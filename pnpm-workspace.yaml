@@ -16,6 +16,7 @@ allowBuilds:
   bcrypt: true
   "@bcryptjs": true
   argon2: true
-  "@nestjs/core": false
+  "@nestjs/core": true
+  msgpackr-extract: true
 minimumReleaseAgeExclude:
   - '@rolldown/binding-android-arm64@1.2.2'

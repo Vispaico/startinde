@@ -44,6 +44,9 @@
     },
     {
       "path": "./apps/admin"
+    },
+    {
+      "path": "./packages/mail"
     }
   ]
 }
