@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+**/node_modules
+.pnpm-store
+
+# Build outputs
+dist
+**/dist
+.next
+**/.next
+out
+coverage
+.turbo
+.nx
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Git & IDE
+.git
+.gitignore
+.vscode
+.idea
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Temp
+.tmp
