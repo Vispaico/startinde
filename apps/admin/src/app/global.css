@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink-50: #f5f7fa;
+  --color-ink-100: #eaeef4;
+  --color-ink-200: #d0d9e6;
+  --color-ink-300: #a8b8cd;
+  --color-ink-400: #7a90ad;
+  --color-ink-500: #56708f;
+  --color-ink-600: #3f5572;
+  --color-ink-700: #2d3d55;
+  --color-ink-800: #1e2a3d;
+  --color-ink-900: #121a28;
+  --color-ink-950: #0a0f1a;
+
+  --color-gold-50: #fdf9ef;
+  --color-gold-100: #faf0d7;
+  --color-gold-200: #f4dfab;
+  --color-gold-300: #ecc87a;
+  --color-gold-400: #e4ae4d;
+  --color-gold-500: #dc9a2b;
+  --color-gold-600: #c07e1f;
+  --color-gold-700: #9c631c;
+  --color-gold-800: #7d4f1d;
+  --color-gold-900: #66421b;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink-950);
+  color: var(--color-ink-50);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
