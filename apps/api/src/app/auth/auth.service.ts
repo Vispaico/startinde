@@ -15,6 +15,17 @@ import {
 export class AuthService {
   private readonly config = loadAuthConfig();
 
+  /** Comma-separated ADMIN_EMAILS env — accounts that get the admin role. */
+  private readonly adminEmails: string[] = (process.env.ADMIN_EMAILS ?? '')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+
+  private resolveRole(email: string, dbRole: string): SessionUser['role'] {
+    if (this.adminEmails.includes(email.toLowerCase())) return 'admin';
+    return (dbRole as SessionUser['role']) ?? 'user';
+  }
+
   /**
    * Request a magic link. Creates the user if they don't exist yet
    * (progressive onboarding — assessment-first, account at the end).
@@ -119,7 +130,7 @@ export class AuthService {
     const user: SessionUser = {
       id: row.user_id,
       email: row.email,
-      role: (row.role as SessionUser['role']) ?? 'user',
+      role: this.resolveRole(row.email, row.role),
       locale: row.locale ?? 'en',
     };
     const session = await signSessionToken(user, this.config);
